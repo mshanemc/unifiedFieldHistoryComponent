@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+  <types>
+    <name>AuraDefinitionBundle</name>
+    <members>unifiedFieldHistory</members>
+    <members>unifiedFieldHistoryFullPage</members>
+    <members>unifiedFieldHistoryRecordPage</members>
+  </types>
+  <types>
+    <name>ApexClass</name>
+    <members>LightningHistoryCtrl</members>
+    <members>LightningHistoryCtrlTest</members>
+  </types>
+  <types>
+    <name>CustomLabels</name>
+    <members>CustomLabels</members>
+  </types>
+  <types>
+    <name>CustomLabel</name>
+    <members>*</members>
+  </types>
+  <version>42.0</version>
+</Package>

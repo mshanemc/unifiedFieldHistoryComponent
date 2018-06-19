@@ -1,0 +1,43 @@
+<aura:component implements="lightning:isUrlAddressable" access="global" controller="LightningHistoryCtrl">
+
+  <aura:attribute name="recordId" type="string"/>
+  <aura:attribute name="sObjectName" type="string"/>
+
+  <aura:attribute name="pluralLabel" type="string" />
+  <aura:attribute name="objectLabel" type="string" />
+  <aura:attribute name="nameField" type="string" />
+  <aura:attribute name="nameValue" type="string" />
+
+  <aura:attribute name="inited" type="boolean" default="false" />
+  <aura:attribute name="targetFields" type="Object"/>
+
+  <aura:if isTrue="{!v.nameField}">
+    <force:recordData aura:id="frd" mode="VIEW" recordId="{!v.recordId}" targetFields="{!v.targetFields}" layoutType="FULL" recordUpdated="{!c.recordUpdated}"  />
+  </aura:if>
+
+  <lightning:navigation aura:id="navService" />
+
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+  <lightning:card variant="base">
+    <aura:set attribute="title">
+      <lightning:breadcrumbs>
+        <lightning:breadcrumb label="{!v.pluralLabel}" onclick="{! c.navToObject }" />
+        <lightning:breadcrumb label="{!v.nameValue}" onclick="{! c.navToRecord }" />
+      </lightning:breadcrumbs>
+      <div class="slds-page-header__title">
+         {!v.objectLabel + ' ' + $Label.c.UnifiedFieldHistory_Card_Label}
+      </div>
+    </aura:set>
+    <aura:set attribute="actions">
+      <!--actions go here, mostly buttons!-->
+    </aura:set>
+
+    <div class="slds-p-horizontal_medium">
+      <aura:if isTrue="{!v.inited}">
+        <c:unifiedFieldHistory recordId="{!v.recordId}" sObjectName="{!v.sObjectName}" fullScreen="true"/>
+      </aura:if>
+    </div>
+  </lightning:card>
+
+</aura:component>

@@ -1,0 +1,27 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName" access="global" controller="LightningHistoryCtrl">
+
+  <aura:attribute name="rowLimit" type="integer" default="10" />
+  <aura:attribute name="objectLabel" type="string" />
+
+  <lightning:navigation aura:id="navService" />
+
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+  <!--icons at https://www.lightningdesignsystem.com/icons/ -->
+  <lightning:card variant="base" iconName="standard:product_request">
+    <aura:set attribute="title">
+      <div class="slds-card__header-link">
+        {!v.objectLabel + ' ' + $Label.c.UnifiedFieldHistory_Card_Label}
+      </div>
+    </aura:set>
+
+    <aura:set attribute="footer">
+      <a class="slds-card__footer-action" href="" onclick="{!c.viewAll}">{!$Label.c.View_All}</a>
+    </aura:set>
+
+    <div class="slds-p-horizontal_medium">
+      <c:unifiedFieldHistory recordId="{!v.recordId}" sObjectName="{!v.sObjectName}" fullScreen="false" rowLimit="{!v.rowLimit}"/>
+    </div>
+  </lightning:card>
+
+
+</aura:component>
