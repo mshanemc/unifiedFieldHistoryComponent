@@ -1,0 +1,21 @@
+{
+  "packageDirectories": [
+    {
+      "path": "implementation",
+      "default": true
+    },
+    {
+      "path": "force-app",
+      "package": "unifiedFieldHistory",
+      "versionName": "ver 0.1",
+      "versionNumber": "0.3.0.NEXT",
+      "default": false
+    }
+  ],
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "42.0",
+  "packageAliases": {
+    "unifiedFieldHistory": "0Ho6A000000CaU1SAK"
+  }
+}

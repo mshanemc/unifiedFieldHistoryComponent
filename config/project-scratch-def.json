@@ -1,0 +1,9 @@
+{
+    "orgName": "shane.mclaughlin Company",
+    "sourceOrg" : "00Df4000004JYmLEAW",
+    "features" : ["ExternalSharing"],
+    "orgPreferences" : {
+        "enabled": ["S1DesktopEnabled"],
+        "disabled": ["S1EncryptedStoragePref2"]
+    }
+}

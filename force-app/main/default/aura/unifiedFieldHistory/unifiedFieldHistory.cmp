@@ -1,0 +1,17 @@
+<aura:component controller="LightningHistoryCtrl">
+
+  <aura:attribute name="recordId" type="string" access="public" required="true"/>
+  <aura:attribute name="sObjectName" type="string" access="public" required="true" />
+  <aura:attribute name="fullScreen" type="boolean" default="false"/>
+  <aura:attribute name="rowLimit" type="integer" />
+
+  <aura:attribute name="columns" type="List" default="[]"/>
+  <aura:attribute name="data" type="List" default="[]" />
+  <aura:attribute name="unarchivedCount" type="integer" />
+
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+  <lightning:datatable columns="{! v.columns }" data="{! v.data }" keyField="Id" hideCheckboxColumn="true" enableInfiniteLoading="true"
+        onloadmore="{! c.loadMoreData }" />
+
+</aura:component>

@@ -1,0 +1,19 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Opportunity",
+                "referenceId": "OpportunityRef1"
+            },
+            "Name": "Test Oppty",
+            "AccountId": "@AccountRef1",
+            "Amount": 100,
+            "CloseDate": "2018-05-31",
+            "Description": "It's my test oppty",
+            "ForecastCategoryName": "Pipeline",
+            "Probability": 10,
+            "StageName": "Qualification",
+            "Type": "Existing Customer - Upgrade"
+        }
+    ]
+}
